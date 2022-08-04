@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="300dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/unline_by_goodsinfo"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/selectTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="已选： "
+                    android:textColor="@color/coldAsh"
+                    android:textSize="@dimen/x14sp" />
+
+                <TextView
+                    android:id="@+id/selectNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/selectTitle"
+                    android:text="1件"
+                    android:textSize="@dimen/x14sp" />
+
+                <TextView
+                    android:id="@+id/minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toLeftOf="@+id/num"
+                    android:gravity="center_horizontal"
+                    android:onClick="minNum"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="-"
+                    android:textSize="@dimen/x16sp" />
+
+                <TextView
+                    android:id="@+id/num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_toLeftOf="@+id/plus"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="1"
+                    android:textSize="@dimen/x16sp" />
+
+                <TextView
+                    android:id="@+id/plus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="plusNum"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="+"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/unline_by_goodsinfo"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/storeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="店铺： "
+                    android:textColor="@color/coldAsh" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/storeTitle"
+                    android:text="千叶珠宝旗舰店" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/expand" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/up" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="上拉查看图文详情" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
