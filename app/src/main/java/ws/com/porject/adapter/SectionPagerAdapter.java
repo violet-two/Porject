@@ -32,5 +32,4 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return super.getPageTitle(position);
     }
-
 }
