@@ -1,6 +1,7 @@
 package ws.com.porject.adapter;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -16,6 +17,7 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
+
         return BodyFragment.newInstance(position+1);
     }
 
@@ -23,4 +25,12 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 3;
     }
+
+    @Nullable
+    @Override
+    //解决滑动不出现图片问题
+    public CharSequence getPageTitle(int position) {
+        return super.getPageTitle(position);
+    }
+
 }

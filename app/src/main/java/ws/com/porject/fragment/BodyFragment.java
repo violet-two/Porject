@@ -1,15 +1,21 @@
 package ws.com.porject.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+import java.util.ArrayList;
+
 import ws.com.porject.R;
+import ws.com.porject.adapter.ImagePagerAdapter;
+import ws.com.porject.bean.GoodsInfo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,11 +36,11 @@ public class BodyFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private int sectionNumber;
     private TextView plus;
     private TextView minus;
     private TextView selectNum;
+    private ViewPager goodsInfoImageViewPager;
 
     public BodyFragment() {
         // Required empty public constructor
@@ -44,13 +50,13 @@ public class BodyFragment extends Fragment implements View.OnClickListener {
     public static BodyFragment newInstance(int sectionNumber) {
         BodyFragment fragment = new BodyFragment();
         Bundle args = new Bundle();
-        args.putInt("position",sectionNumber);
+        args.putInt("position", sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
 
     //从包裹取出位置号
-    private int getPosition(){
+    private int getPosition() {
         return getArguments().getInt("position");
     }
 
@@ -63,12 +69,16 @@ public class BodyFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private ArrayList<GoodsInfo> mGoodsList = GoodsInfo.getDefaultList();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View inflate = null;
-        if(getPosition()==1){
+
+
+        if (getPosition() == 1) {
             inflate = inflater.inflate(R.layout.fragment_goods_info, container, false);
             mNum = inflate.findViewById(R.id.num);
             plus = inflate.findViewById(R.id.plus);
@@ -76,33 +86,47 @@ public class BodyFragment extends Fragment implements View.OnClickListener {
             selectNum = inflate.findViewById(R.id.selectNum);
             plus.setOnClickListener(this);
             minus.setOnClickListener(this);
+            inflate = inflater.inflate(R.layout.fragment_goods_info, container, false);
+            goodsInfoImageViewPager = inflate.findViewById(R.id.goodsInfoImageViewPager);
+//        ImageFragment imageFragment = new ImageFragment();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.goodsInfoImageViewPager, imageFragment, "imageFragment");
+//        fragmentTransaction.commit();
+            //定义适配器
+            FragmentManager fragmentManager = getFragmentManager();
+            ImagePagerAdapter imagePagerAdapter = new ImagePagerAdapter(fragmentManager, mGoodsList);
+            goodsInfoImageViewPager.setAdapter(imagePagerAdapter);
+            //解决滑动冲突问题
+            goodsInfoImageViewPager.setOffscreenPageLimit(mGoodsList.size());
+            //默认页面为0
+            goodsInfoImageViewPager.setCurrentItem(0);
         }
-       if(getPosition()==2){
-           inflate = inflater.inflate(R.layout.fragment_details, container, false);
-       }
-        if(getPosition()==3){
+        if (getPosition() == 2) {
+            inflate = inflater.inflate(R.layout.fragment_details, container, false);
+        }
+        if (getPosition() == 3) {
             inflate = inflater.inflate(R.layout.fragment_evaluate, container, false);
         }
         return inflate;
-
     }
+
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.plus:
                 num++;
                 mNum.setText(String.valueOf(num));
-                selectNum.setText(num+"件");
+                selectNum.setText(num + "件");
                 break;
             case R.id.minus:
-                if(num<=1);
-                else{
+                if (num <= 1) ;
+                else {
                     num--;
                     mNum.setText(String.valueOf(num));
-                    selectNum.setText("已选： "+num+"件");
+                    selectNum.setText(num + "件");
                 }
-            break;
+                break;
         }
     }
 }
