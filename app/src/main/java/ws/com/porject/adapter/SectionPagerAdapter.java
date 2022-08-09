@@ -17,7 +17,6 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
         return BodyFragment.newInstance(position+1);
     }
 

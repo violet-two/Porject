@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ public class ImageFragment extends Fragment {
     public ImageFragment() {
         // Required empty public constructor
     }
+
 
     // TODO: Rename and change types and number of parameters
     public static ImageFragment newInstance(int position,int pic_id) {

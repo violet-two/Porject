@@ -15,4 +15,6 @@
     <color name="buy_button">#30CCD9</color>
     <!--#加入购物车-->
     <color name="add_shopping_car">#101010</color>
+    <!--menu背景-->
+    <color name="transparentBlack">#99000000</color>
 </resources>

@@ -2,10 +2,60 @@ package ws.com.porject.bean;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BeanData {
+public class BeanData implements Serializable {
 
+
+    @Override
+    public String toString() {
+        return "BeanData{" +
+                "mainVideoUrl='" + mainVideoUrl + '\'' +
+                ", givePointName='" + givePointName + '\'' +
+                ", buyState='" + buyState + '\'' +
+                ", givePoint='" + givePoint + '\'' +
+                ", isDirectBuyProduct='" + isDirectBuyProduct + '\'' +
+                ", channelType='" + channelType + '\'' +
+                ", productName='" + productName + '\'' +
+                ", merchantName='" + merchantName + '\'' +
+                ", merchantId='" + merchantId + '\'' +
+                ", pSellingPoint='" + pSellingPoint + '\'' +
+                ", state='" + state + '\'' +
+                ", isMobilePriceOnly=" + isMobilePriceOnly +
+                ", stock=" + stock +
+                ", displayAttrs=" + displayAttrs +
+                ", images=" + images +
+                ", hasFav=" + hasFav +
+                ", remarkCount=" + remarkCount +
+                ", totalExecTime='" + totalExecTime + '\'' +
+                ", sellingPoint='" + sellingPoint + '\'' +
+                ", sellableCount=" + sellableCount +
+                ", descVideoUrl='" + descVideoUrl + '\'' +
+                ", isSpecialPrice=" + isSpecialPrice +
+                ", baseMemberPrice='" + baseMemberPrice + '\'' +
+                ", mSellingPoint='" + mSellingPoint + '\'' +
+                ", minPrice='" + minPrice + '\'' +
+                ", maxPrice='" + maxPrice + '\'' +
+                ", isFastBuy='" + isFastBuy + '\'' +
+                ", detailNoticeImageUrl='" + detailNoticeImageUrl + '\'' +
+                ", averageScore=" + averageScore +
+                ", marketPriceName='" + marketPriceName + '\'' +
+                ", specialPriceEndTime='" + specialPriceEndTime + '\'' +
+                ", mobileContent='" + mobileContent + '\'' +
+                ", isCanPublish=" + isCanPublish +
+                ", mainVideoPreImageUrl='" + mainVideoPreImageUrl + '\'' +
+                ", merchantType='" + merchantType + '\'' +
+                ", relues=" + relues +
+                ", onceMustBuyCount=" + onceMustBuyCount +
+                ", memberPrice='" + memberPrice + '\'' +
+                ", upsAndDownFlag='" + upsAndDownFlag + '\'' +
+                ", promotionLogo='" + promotionLogo + '\'' +
+                ", lastCacheTime=" + lastCacheTime +
+                ", totalBoughtNumber=" + totalBoughtNumber +
+                ", inventoryAttrs=" + inventoryAttrs +
+                '}';
+    }
 
     @SerializedName("mainVideoUrl")
     private String mainVideoUrl;
@@ -438,7 +488,17 @@ public class BeanData {
         this.inventoryAttrs = inventoryAttrs;
     }
 
-    public static class ReluesBean {
+    public static class ReluesBean implements Serializable{
+        @Override
+        public String toString() {
+            return "ReluesBean{" +
+                    "gift=" + gift +
+                    ", coupon=" + coupon +
+                    ", exchange=" + exchange +
+                    ", moreCoupon=" + moreCoupon +
+                    '}';
+        }
+
         @SerializedName("gift")
         private List<?> gift;
         @SerializedName("coupon")
@@ -480,7 +540,39 @@ public class BeanData {
             this.moreCoupon = moreCoupon;
         }
 
-        public static class CouponBean {
+        public static class CouponBean implements Serializable{
+            @Override
+            public String toString() {
+                return "CouponBean{" +
+                        "lastModifiedTime=" + lastModifiedTime +
+                        ", endDate=" + endDate +
+                        ", description='" + description + '\'' +
+                        ", recommend='" + recommend + '\'' +
+                        ", type='" + type + '\'' +
+                        ", displayInProductDetail=" + displayInProductDetail +
+                        ", enabled=" + enabled +
+                        ", tips='" + tips + '\'' +
+                        ", vid='" + vid + '\'' +
+                        ", highTimes=" + highTimes +
+                        ", scope=" + scope +
+                        ", id='" + id + '\'' +
+                        ", minCost=" + minCost +
+                        ", productRule=" + productRule +
+                        ", specialPricedProductOk=" + specialPricedProductOk +
+                        ", excludeOtherOrderRule=" + excludeOtherOrderRule +
+                        ", includedCategories=" + includedCategories +
+                        ", includedUserCollections=" + includedUserCollections +
+                        ", combinedProductOk=" + combinedProductOk +
+                        ", includedProducts=" + includedProducts +
+                        ", priority=" + priority +
+                        ", beginDate=" + beginDate +
+                        ", name='" + name + '\'' +
+                        ", excludedProducts=" + excludedProducts +
+                        ", excludedCategories=" + excludedCategories +
+                        ", includedUserGroups=" + includedUserGroups +
+                        '}';
+            }
+
             @SerializedName("lastModifiedTime")
             private Long lastModifiedTime;
             @SerializedName("endDate")
@@ -742,11 +834,19 @@ public class BeanData {
                 this.includedUserGroups = includedUserGroups;
             }
 
-            public static class IncludedCategoriesBean {
+            public static class IncludedCategoriesBean implements Serializable{
                 @SerializedName("name")
                 private String name;
                 @SerializedName("id")
                 private String id;
+
+                @Override
+                public String toString() {
+                    return "IncludedCategoriesBean{" +
+                            "name='" + name + '\'' +
+                            ", id='" + id + '\'' +
+                            '}';
+                }
 
                 public String getName() {
                     return name;
@@ -767,12 +867,23 @@ public class BeanData {
         }
     }
 
-    public static class InventoryAttrsBean {
+    public static class InventoryAttrsBean implements Serializable{
         @SerializedName("name")
         private String name;
         @SerializedName("id")
         private String id;
+
+        @Override
+        public String toString() {
+            return "InventoryAttrsBean{" +
+                    "name='" + name + '\'' +
+                    ", id='" + id + '\'' +
+                    ", standardValues=" + standardValues +
+                    '}';
+        }
+
         @SerializedName("standardValues")
+
         private List<StandardValuesBean> standardValues;
 
         public String getName() {
@@ -799,11 +910,19 @@ public class BeanData {
             this.standardValues = standardValues;
         }
 
-        public static class StandardValuesBean {
+        public static class StandardValuesBean implements Serializable{
             @SerializedName("name")
             private String name;
             @SerializedName("id")
             private String id;
+
+            @Override
+            public String toString() {
+                return "StandardValuesBean{" +
+                        "name='" + name + '\'' +
+                        ", id='" + id + '\'' +
+                        '}';
+            }
 
             public String getName() {
                 return name;

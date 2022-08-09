@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentRight="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:text="购买数量" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/minusByPop"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/num"
+            android:background="@drawable/unline_by_goodsinfo_num"
+            android:gravity="center_horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="-"
+            android:textSize="@dimen/x16sp" />
+
+        <TextView
+            android:id="@+id/numByPop"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/plus"
+            android:background="@drawable/unline_by_goodsinfo_num"
+            android:gravity="center_horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="1"
+            android:textSize="@dimen/x16sp" />
+
+        <TextView
+            android:id="@+id/plusByPop"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/unline_by_goodsinfo_num"
+            android:gravity="center_horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:text="+"
+            android:textColor="@color/black"
+            android:textSize="@dimen/x16sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/nowBuy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="立即购买"
+        android:background="#30CCD9"/>
+</LinearLayout>
