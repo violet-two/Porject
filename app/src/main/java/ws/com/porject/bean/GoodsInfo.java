@@ -10,12 +10,6 @@ public class GoodsInfo {
     public int id;
     // 名称
     public String name;
-    // 描述
-    public String description;
-    // 价格
-    public float price;
-    // 大图的保存路径
-    public String picPath;
     // 大图的资源编号
     public int pic;
 
